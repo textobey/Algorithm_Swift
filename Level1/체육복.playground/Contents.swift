@@ -31,5 +31,18 @@ import UIKit
 
 // n: 전체학생의 수, lost: 체육복을 도난당한 학생의 번호가 담긴 배열, reserve: 여벌의 체육복을 가져온 학생들의 번호가 담긴 배열 -> 체육수업을 들을 수 있는 학생의 최대수
 func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+    let reserveAvailable: Set<Int> = Set(reserve).subtracting(lost)
+    let lostAll: Set<Int> = Set(lost).subtracting(reserve)
+    
+    let log: (AnyHashable) -> () = { print($0) }
+    
+    let availableStudent: [Int] = reserveAvailable.enumerated().map { value in
+        lostAll.filter {
+            $0 == value.element - 1 || $0 == value.element + 1
+        }.count
+    }
+    log(availableStudent)
     return 0
 }
+
+solution(5, [2, 4], [1, 3, 5])
