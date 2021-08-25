@@ -55,3 +55,28 @@ func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
 solution(5, [2, 4], [1, 3, 5])
 solution(5, [2, 4], [3])
 solution(3, [3], [1])
+
+func functionalSolution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
+    let reserveSet: Set<Int> = Set(reserve).subtracting(lost)
+    let lostSet: Set<Int> = Set(lost).subtracting(reserve)
+    // 앞사람에게 빌려주는게 가능한 번호
+    let front = reserveSet.filter { value in
+        lostSet.contains(value - 1)
+    }
+    // 뒷사람에게 빌려주는게 가능한 번호
+    let back = reserveSet.filter { value in
+        lostSet.contains(value + 1)
+    }
+    // 중복 번호
+    let overlapped = front.intersection(back)
+    
+    // 체육복을 빌려줄수있는 인원수
+    let available = (front.count + back.count) - overlapped.count
+    // 빌려줄수있는 인원수가 잃어버린 인원수보다 많으면 ? 모두 인원 체육수업 가능 : 모든인원수 - (불가능한 인원수 - 빌려줄수있는 인원수)
+    return available >= lostSet.count ? n : n - (lostSet.count - available)
+}
+
+functionalSolution(5, [2, 4], [1, 3, 5]) // 5
+functionalSolution(5, [2, 4], [3]) // 4
+functionalSolution(3, [3], [1]) // 2
+functionalSolution(20, [3, 6, 8, 10, 12, 20, 35], [5, 6, 7, 8, 9, 10, 11, 22, 36]) // 18
