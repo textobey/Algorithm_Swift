@@ -31,18 +31,27 @@ import UIKit
 
 // n: 전체학생의 수, lost: 체육복을 도난당한 학생의 번호가 담긴 배열, reserve: 여벌의 체육복을 가져온 학생들의 번호가 담긴 배열 -> 체육수업을 들을 수 있는 학생의 최대수
 func solution(_ n:Int, _ lost:[Int], _ reserve:[Int]) -> Int {
-    let reserveAvailable: Set<Int> = Set(reserve).subtracting(lost)
-    let lostAll: Set<Int> = Set(lost).subtracting(reserve)
+    /// reserve와 lost의 차집합을 구함(각 배열안에 중복되는 값이 없어야 이슈가 없음)
+    /// 여벌의 옷이 있던 학생도 도난을 당했을 수 있기 때문에, lost와 비교하여 차집합을 구해줌
+    let reserveSet: Set<Int> = Set(reserve).subtracting(lost)
+    var lostSet: Set<Int> = Set(lost).subtracting(reserve)
     
-    let log: (AnyHashable) -> () = { print($0) }
-    
-    let availableStudent: [Int] = reserveAvailable.enumerated().map { value in
-        lostAll.filter {
-            $0 == value.element - 1 || $0 == value.element + 1
-        }.count
+    for reserve in reserveSet {
+        /// 여벌의 옷을 가지고 있는 학생이 뒷번호 학생에게 빌려줄수있는지 확인함
+        if lostSet.contains(reserve - 1) {
+            /// 빌려줄수있다면, 잃어버린 학생 목록에서 지워줌
+            lostSet.remove(reserve - 1)
+            continue
+        }
+        /// 여벌의 옷을 가지고 있는 학생이 뒷번호 학생에게 빌려줄수있는지 확인함
+        else if lostSet.contains(reserve + 1) {
+            lostSet.remove(reserve + 1)
+        }
     }
-    log(availableStudent)
-    return 0
+    /// 총학생수 - 잃어버린 학생수
+    return n - lostSet.count
 }
 
 solution(5, [2, 4], [1, 3, 5])
+solution(5, [2, 4], [3])
+solution(3, [3], [1])
