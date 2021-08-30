@@ -56,131 +56,96 @@ import UIKit
  오른손잡이가 [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]를 순서대로 누르면 사용한 손은 "LLRLLRLLRL"이 됩니다.
 */
 
+
+/*
+ 좌우간의 키패드끼리는 +1, -1 차이가 난다.
+ 상하간의 키패드끼리는 +3, -3 차이가 난다.
+ 
+ 왼손위치 4, 오른손 위치 2, 눌러야할 위치 5
+ 4 - 5..절대값 1 / 3 = 0..1 -> 1
+ 2 - 5..절대값 3 / 3 = 1..0 -> 1
+ 
+ 왼손위치 7, 오른손 위치 12, 눌러야할 위치 0
+ 7 - 0..절대값 7 / 3 = 2..1 -> 3
+ 12 - 0..절대값 12 / 3 = 4..0 -> 4
+ */
+
+enum Expression {
+    case equal
+    case left
+    case right
+}
+
 func solution(_ numbers:[Int], _ hand:String) -> String {
-    let keypad: [[String]] = [
-        ["1", "2", "3"],
-        ["4", "5", "6"],
-        ["7", "8", "9"],
-        ["*", "0", "#"]
-    ]
+    var result: String = ""
     
-    var lCurrentPosition = "*"
-    var rCurrentPosition = "#"
+    var leftHandPositon: Int = 10 // *
+    var rightHandPosition: Int = 12 // #
     
-    var result = ""
-    
-    for (_, value) in numbers.enumerated() {
-        if let side = getWhichSide(value) {
-            result += side
-            if side == "L" {
-                lCurrentPosition = "\(value)"
-            } else {
-                rCurrentPosition = "\(value)"
-            }
-        } else {
-            if let lcp = Int(lCurrentPosition), let rcp = Int(rCurrentPosition) {
-                if abs(value - lcp) == abs(value - rcp) {
-                    let h = hand == "right" ? "R" : "L"
-                    result += h
-                    if hand == "right" {
-                        rCurrentPosition = "\(value)"
-                    } else {
-                        lCurrentPosition = "\(value)"
-                    }
-                } else if abs(value - lcp) > abs(value - rcp) {
+    for (_, number) in numbers.enumerated() {
+        let value = number == 0 ? 11 : number
+        
+        if isLeft(value) {
+            result += "L"
+            leftHandPositon = value
+        } else if isRight(value) {
+            result += "R"
+            rightHandPosition = value
+        } else { //2 5 8 0
+            let leftABS = getABS(leftHandPositon, num2: value)
+            let rightABS = getABS(rightHandPosition, num2: value)
+            
+            let leftDistance = getDistance(leftABS)
+            let rightDistance = getDistance(rightABS)
+            
+            switch getShorterHand(left: leftDistance, right: rightDistance) {
+            case .equal:
+                if hand == "right" {
                     result += "R"
-                    rCurrentPosition = "\(value)"
-                } else if abs(value - lcp) < abs(value - rcp) {
+                    rightHandPosition = value
+                } else {
                     result += "L"
-                    lCurrentPosition = "\(value)"
+                    leftHandPositon = value
                 }
+            case .right:
+                result += "R"
+                rightHandPosition = value
+            case .left:
+                result += "L"
+                leftHandPositon = value
             }
         }
     }
     print(result)
-    
-    return ""
+    return result
 }
 
-func getWhichSide(_ num: Int) -> String? {
-    switch num {
-    case 1, 4, 7:
-        return "L"
-    case 3, 6, 9:
-        return "R"
-    //case 2, 5, 8, 0:
-    //    return hand == "right" ? "R" : "L"
-    default:
-        return nil
+func isLeft(_ num: Int) -> Bool {
+    return num == 1 || num == 4 || num == 7 ? true : false
+}
+
+func isRight(_ num: Int) -> Bool {
+    return num == 3 || num == 6 || num == 9 ? true : false
+}
+
+func getABS(_ num1: Int, num2: Int) -> UInt {
+    return (num1 - num2).magnitude
+}
+
+func getDistance(_ num: UInt) -> UInt {
+    return (num / 3) + (num % 3)
+}
+
+func getShorterHand(left: UInt, right: UInt) -> Expression {
+    if left == right {
+        return .equal
+    } else if left > right {
+        return .right
+    } else {
+        return .left
     }
 }
 
-solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right") // LRL LL RLLRR L || LRL RR RLLRR R  4 5 11 -> 5, 8, 5
-
-
-
-
-//
-//
-
-
-// L 4
-// R 3
-
-
-//var goalIndex: Int = 0
-//var leftIndex: Int = 0
-//var rightIndex: Int = 0
-//
-//for i in 0 ..< keypad.count {
-//    if let _ = keypad[i].firstIndex(of: String(value)) {
-//        if let index = keypad.firstIndex(of: keypad[i]) {
-//            goalIndex = index
-//        }
-//    }
-//    if let _ = keypad[i].firstIndex(of: lCurrentPosition) {
-//        if let index = keypad.firstIndex(of: keypad[i]) {
-//            leftIndex = index
-//        }
-//    }
-//    if let _ = keypad[i].firstIndex(of: rCurrentPosition) {
-//        if let index = keypad.firstIndex(of: keypad[i]) {
-//            rightIndex = index
-//        }
-//    }
-//}
-////print((goalIndex - leftIndex), (goalIndex - rightIndex))
-//
-//if (goalIndex - leftIndex) > (goalIndex - rightIndex) {
-//    result += "R"
-//    rCurrentPosition = "\(value)"
-//} else if (goalIndex - leftIndex) < (goalIndex - rightIndex) {
-//    result += "L"
-//    lCurrentPosition = "\(value)"
-//} else if (goalIndex - leftIndex) == (goalIndex - rightIndex) {
-//    let h = hand == "right" ? "R" : "L"
-//    result += h
-//    if h == "R" {
-//        rCurrentPosition = "\(value)"
-//    } else {
-//        lCurrentPosition = "\(value)"
-//    }
-//}
-
-//if let lcp = Int(lCurrentPosition), let rcp = Int(rCurrentPosition) {
-//    if abs(value - lcp) == abs(value - rcp) {
-//        let h = hand == "right" ? "R" : "L"
-//        result += h
-//        if hand == "right" {
-//            rCurrentPosition = "\(value)"
-//        } else {
-//            lCurrentPosition = "\(value)"
-//        }
-//    } else if abs(value - lcp) > abs(value - rcp) {
-//        result += "R"
-//        rCurrentPosition = "\(value)"
-//    } else if abs(value - lcp) < abs(value - rcp) {
-//        result += "L"
-//        lCurrentPosition = "\(value)"
-//    }
-//}
+solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right")
+solution([7, 0, 8, 2, 8, 3, 1, 5, 7, 6, 2], "left")
+solution([1, 2, 3, 4, 5, 6, 7, 8, 9, 0], "right")
