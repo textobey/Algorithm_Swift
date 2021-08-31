@@ -57,3 +57,40 @@ func solution(_ answers:[Int]) -> [Int] {
 
 solution([1, 2, 3, 4, 5])
 solution([1, 3, 2, 4, 2])
+
+func myAnotherSolution(_ answers:[Int]) -> [Int] {
+    var result: [Int] = []
+    let students: [[Int]] = [
+        [1, 2, 3, 4, 5],
+        [2, 1, 2, 3, 2, 4, 2, 5],
+        [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    ]
+    
+    let bestScores = students.map { student -> Int in
+        var temp = student
+        if answers.count > students.count {
+            var loop = true
+            while loop {
+                for i in 0 ..< student.count {
+                    temp.append(student[i])
+                    if temp.count >= answers.count {
+                        loop = false
+                        break
+                    }
+                }
+            }
+        }
+        return zip(answers, temp[0 ..< answers.count]).map(==).filter { $0 }.count
+    }
+    
+    for (index, value) in bestScores.enumerated() {
+        if value == bestScores.max() ?? 0 {
+            result.append(index + 1)
+        }
+    }
+    return result.sorted(by: <)
+}
+
+myAnotherSolution([1, 2, 3, 4, 5])
+myAnotherSolution([1, 3, 2, 4, 2])
+myAnotherSolution([1,2,3,4,4,1,2,3,4,5,1,2,3,2,1,2,3,4,1,2,3,4])
