@@ -33,6 +33,19 @@ func minusZero(_ num: Int, _ repeatCount: Int) -> Int {
     return Int(stringOfnum)!
 }
 
-solution([1, 10, 100, 1000])
+func anothersSolution(_ number: [Int]) -> String {
+    // ex) Int("6""10") > Int("10""6")를 기준으로 정렬함
+    let sorted = number.sorted { Int("\($0)\($1)")! > Int("\($1)\($0)")! }
+    // 정렬된 배열의 첫번째 요소가 0이라는것은 모든 배열이 0이라는 의미
+    guard sorted[0] != 0 else { return "0" }
+    
+    return sorted.reduce("") { $0 + "\($1)" }
+}
+
+//solution([1, 10, 100, 1000])
 //solution([6, 10, 2]) // 6210
 //solution([3, 30, 34, 5, 9]) // 9534330
+
+anothersSolution([1, 10, 100, 1000])
+anothersSolution([6, 10, 2]) // 6210
+anothersSolution([3, 30, 34, 5, 9]) // 9534330
