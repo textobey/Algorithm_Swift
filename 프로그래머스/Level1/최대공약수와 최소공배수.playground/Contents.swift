@@ -19,7 +19,19 @@ import UIKit
 // 자연수 2와 5의 최대공약수는 1, 최소공배수는 10이므로 [1, 10]을 리턴해야 합니다.
 
 func solution(_ n: Int, _ m: Int) -> [Int] {
-    return []
+    return [GCD(n, m), LCM(n, m)]
 }
 
-solution(12, 3)
+// 모르면 외워.. 최대공약수
+func GCD(_ a: Int, _ b: Int) -> Int {
+    let mod: Int = a % b
+    return mod == 0 ? min(a, b) : GCD(b, mod)
+}
+
+// 모르면 외워.. 최소공배수
+func LCM(_ a: Int, _ b: Int) -> Int {
+    return a * b / GCD(a, b)
+}
+
+solution(3, 12)
+solution(2, 5)

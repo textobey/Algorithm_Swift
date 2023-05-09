@@ -24,9 +24,14 @@ import UIKit
 // 125    11122    22111    229
 // 따라서 229를 return 해야 합니다.
 
+// 모르면 외워 radix: 10진법을 X진법으로 변경하거나, X진법을 10진법으로 변경
 func solution(_ n: Int) -> Int {
-    return 0
+    let radix3 = String(n, radix: 3)
+    let reversedRadix3 = String(radix3.reversed())
+    let radix3to10 = Int(reversedRadix3, radix: 3)
+    
+    return radix3to10!
 }
 
 solution(45)
-//solution(125)
+solution(125)
