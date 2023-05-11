@@ -27,17 +27,13 @@ import UIKit
 // "abce"와 "abcd"는 사전순으로 정렬하면 "abcd"가 우선하므로, 답은 ["abcd", "abce", "cdx"] 입니다.
 
 func solution(_ strings: [String], _ n: Int) -> [String] {
-    let sortCondition = strings.map { string in
-        string.map { String($0) }[n]
-    }
-    
-    let a = strings.sorted(by: { $0.map { $0 }[n] < $1.map { $0 }[n] })
-    
-    //let a = strings.sorted(using: sortCondition)
-    
-    print(a)
-    
-    return []
+    return strings.sorted(by: {
+        if $0.map({ $0 })[n] == $1.map({ $0 })[n] {
+            return $0 < $1
+        } else {
+            return $0.map { $0 }[n] < $1.map { $0 }[n]
+        }
+    })
 }
 
 solution(["sun", "bed", "car"], 1)
