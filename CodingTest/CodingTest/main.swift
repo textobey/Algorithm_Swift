@@ -20,14 +20,20 @@
 
 import Foundation
 
-func solution(_ n: Int, _ arr1: [Int], _ arr2: [Int]) -> [String] {
-    zip(arr1, arr2).map { first, second in
-        let a = String(first, radix: 2).map { $0 }
-        let b = String(second, radix: 2).map { $0 }
-        
-    }
-    
+func solution(_ a: Int, _ b: Int) -> String {
+    let dateFormatterGet = DateFormatter()
+    dateFormatterGet.locale = Locale(identifier: "eng")
+    dateFormatterGet.dateFormat = "yyyy-MM-dd"
+    let date = dateFormatterGet.date(from:"2016-\(a)-\(b)")
+    let dateFormatter = DateFormatter()
+    dateFormatter.locale = Locale(identifier: "eng")
+    // E: "Tue"
+    // EEEE: "Tuesday"
+    // EEEEE: "T"
+    // EEEEEE: "Tu"
+    dateFormatter.dateFormat = "E"
+    return dateFormatter.string(from:date!).uppercased()
 }
 
-solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])
-solution(6, [46, 33, 33, 22, 31, 50], [27, 56, 19, 14, 14, 10])
+solution(5, 24)
+
