@@ -11,6 +11,8 @@
 		A62DDF3A2AA87F0A00C560D6 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62DDF2F2AA87F0A00C560D6 /* DataStructures.framework */; };
 		A62DDF3F2AA87F0A00C560D6 /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF3E2AA87F0A00C560D6 /* DataStructuresTests.swift */; };
 		A62DDF402AA87F0A00C560D6 /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = A62DDF322AA87F0A00C560D6 /* DataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A62DDF4A2AA87F9F00C560D6 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF492AA87F9F00C560D6 /* LinkedList.swift */; };
+		A62DDF4C2AA87FAA00C560D6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF4B2AA87FAA00C560D6 /* Node.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		A62DDF332AA87F0A00C560D6 /* DataStructures.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataStructures.docc; sourceTree = "<group>"; };
 		A62DDF392AA87F0A00C560D6 /* DataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62DDF3E2AA87F0A00C560D6 /* DataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTests.swift; sourceTree = "<group>"; };
+		A62DDF492AA87F9F00C560D6 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		A62DDF4B2AA87FAA00C560D6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				A62DDF322AA87F0A00C560D6 /* DataStructures.h */,
 				A62DDF332AA87F0A00C560D6 /* DataStructures.docc */,
+				A62DDF492AA87F9F00C560D6 /* LinkedList.swift */,
+				A62DDF4B2AA87FAA00C560D6 /* Node.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -194,6 +200,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62DDF4C2AA87FAA00C560D6 /* Node.swift in Sources */,
+				A62DDF4A2AA87F9F00C560D6 /* LinkedList.swift in Sources */,
 				A62DDF342AA87F0A00C560D6 /* DataStructures.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +413,7 @@
 		A62DDF472AA87F0A00C560D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HU8RMC793N;
@@ -425,6 +434,7 @@
 		A62DDF482AA87F0A00C560D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = HU8RMC793N;
