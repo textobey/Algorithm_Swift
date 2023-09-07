@@ -13,6 +13,8 @@
 		A62DDF402AA87F0A00C560D6 /* DataStructures.h in Headers */ = {isa = PBXBuildFile; fileRef = A62DDF322AA87F0A00C560D6 /* DataStructures.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A62DDF4A2AA87F9F00C560D6 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF492AA87F9F00C560D6 /* LinkedList.swift */; };
 		A62DDF4C2AA87FAA00C560D6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF4B2AA87FAA00C560D6 /* Node.swift */; };
+		A62DDF4E2AA9DF9F00C560D6 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF4D2AA9DF9F00C560D6 /* Stack.swift */; };
+		A62DDF502AA9E24E00C560D6 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF4F2AA9E24E00C560D6 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		A62DDF3E2AA87F0A00C560D6 /* DataStructuresTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStructuresTests.swift; sourceTree = "<group>"; };
 		A62DDF492AA87F9F00C560D6 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		A62DDF4B2AA87FAA00C560D6 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		A62DDF4D2AA9DF9F00C560D6 /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		A62DDF4F2AA9E24E00C560D6 /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				A62DDF332AA87F0A00C560D6 /* DataStructures.docc */,
 				A62DDF492AA87F9F00C560D6 /* LinkedList.swift */,
 				A62DDF4B2AA87FAA00C560D6 /* Node.swift */,
+				A62DDF4D2AA9DF9F00C560D6 /* Stack.swift */,
+				A62DDF4F2AA9E24E00C560D6 /* Queue.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -200,6 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62DDF502AA9E24E00C560D6 /* Queue.swift in Sources */,
+				A62DDF4E2AA9DF9F00C560D6 /* Stack.swift in Sources */,
 				A62DDF4C2AA87FAA00C560D6 /* Node.swift in Sources */,
 				A62DDF4A2AA87F9F00C560D6 /* LinkedList.swift in Sources */,
 				A62DDF342AA87F0A00C560D6 /* DataStructures.docc in Sources */,

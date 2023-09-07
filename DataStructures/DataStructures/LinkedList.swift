@@ -83,6 +83,23 @@ class LinkedList<T: Equatable> {
         currentNode?.next = currentNode?.next?.next
     }
     
+    func getNode(at index: Int) -> Node<T>? {
+        if head == nil {
+            return nil
+        }
+        
+        var currentNode = head
+        
+        for _ in 0 ..< (index - 1) {
+            if currentNode?.next?.next == nil {
+                break
+            }
+            currentNode = currentNode?.next
+        }
+        
+        return currentNode
+    }
+    
     func searchNode(from data: T) -> Node<T>? {
         if head == nil {
             return nil
