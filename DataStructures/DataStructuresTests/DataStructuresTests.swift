@@ -11,17 +11,35 @@ import XCTest
 class DataStructuresTests: XCTestCase {
     
     var sut: LinkedList<Int>!
+    var sut2: DoublyLinkedList<Int>!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         sut = LinkedList<Int>()
+        sut2 = DoublyLinkedList<Int>()
     }
 
     override func tearDownWithError() throws {
         sut = nil
+        sut2 = nil
         try super.tearDownWithError()
     }
+    
+    func testDoublyLinkedList() {
+        sut2.insert(data: 1)
+        sut2.insert(data: 2)
+        sut2.insert(data: 3)
+        sut2.insert(data: 4)
+        sut2.insert(data: 5)
+        print(sut2.description)
+        sut2.removeLast()
+        sut2.removeLast()
+        sut2.removeLast()
+        sut2.removeLast()
+        print(sut2.description)
+    }
 
+    /*
     func testLinkedListAbstractData() {
         sut.append(data: 1)
         sut.append(data: 2)
@@ -31,5 +49,6 @@ class DataStructuresTests: XCTestCase {
         sut.removeLast()
         print(sut.description)
     }
+    */
 
 }
