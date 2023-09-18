@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61AB3882AB85E1C00F258CF /* TowerOfHanoi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61AB3872AB85E1C00F258CF /* TowerOfHanoi.swift */; };
 		A62DDF342AA87F0A00C560D6 /* DataStructures.docc in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF332AA87F0A00C560D6 /* DataStructures.docc */; };
 		A62DDF3A2AA87F0A00C560D6 /* DataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A62DDF2F2AA87F0A00C560D6 /* DataStructures.framework */; };
 		A62DDF3F2AA87F0A00C560D6 /* DataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62DDF3E2AA87F0A00C560D6 /* DataStructuresTests.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A61AB3872AB85E1C00F258CF /* TowerOfHanoi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerOfHanoi.swift; sourceTree = "<group>"; };
 		A62DDF2F2AA87F0A00C560D6 /* DataStructures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A62DDF322AA87F0A00C560D6 /* DataStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataStructures.h; sourceTree = "<group>"; };
 		A62DDF332AA87F0A00C560D6 /* DataStructures.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = DataStructures.docc; sourceTree = "<group>"; };
@@ -60,10 +62,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A61AB3862AB85E0B00F258CF /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				A61AB3872AB85E1C00F258CF /* TowerOfHanoi.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
 		A62DDF252AA87F0A00C560D6 = {
 			isa = PBXGroup;
 			children = (
 				A62DDF312AA87F0A00C560D6 /* DataStructures */,
+				A61AB3862AB85E0B00F258CF /* Algorithm */,
 				A62DDF3D2AA87F0A00C560D6 /* DataStructuresTests */,
 				A62DDF302AA87F0A00C560D6 /* Products */,
 			);
@@ -213,6 +224,7 @@
 				A62DDF522AA9EA3000C560D6 /* DoublyLinkedList.swift in Sources */,
 				A62DDF4E2AA9DF9F00C560D6 /* Stack.swift in Sources */,
 				A62DDF4C2AA87FAA00C560D6 /* Node.swift in Sources */,
+				A61AB3882AB85E1C00F258CF /* TowerOfHanoi.swift in Sources */,
 				A62DDF4A2AA87F9F00C560D6 /* LinkedList.swift in Sources */,
 				A62DDF342AA87F0A00C560D6 /* DataStructures.docc in Sources */,
 			);

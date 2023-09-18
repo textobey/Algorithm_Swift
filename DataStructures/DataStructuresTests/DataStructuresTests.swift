@@ -12,17 +12,25 @@ class DataStructuresTests: XCTestCase {
     
     var sut: LinkedList<Int>!
     var sut2: DoublyLinkedList<Int>!
+    var sut3: TowerOfHanoi!
 
     override func setUpWithError() throws {
         try super.setUpWithError()
         sut = LinkedList<Int>()
         sut2 = DoublyLinkedList<Int>()
+        sut3 = TowerOfHanoi()
     }
 
     override func tearDownWithError() throws {
         sut = nil
         sut2 = nil
+        sut3 = nil
         try super.tearDownWithError()
+    }
+    
+    func testTowerOfHanoi() {
+        let result = sut3.soulution(2)
+        print(result)
     }
     
     func testDoublyLinkedList() {
