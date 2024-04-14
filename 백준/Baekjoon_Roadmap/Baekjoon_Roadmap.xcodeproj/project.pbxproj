@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6D14B842BB6CF38005D91C9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D14B832BB6CF38005D91C9 /* main.swift */; };
+		A6F4B9DF2BCBD6EE009C91C4 /* 1325_효율적인해킹.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F4B9DE2BCBD6EE009C91C4 /* 1325_효율적인해킹.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,7 @@
 		A6EFAB362BC3F94100DBABA1 /* 11724_연결요소의개수.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "11724_연결요소의개수.swift"; sourceTree = "<group>"; };
 		A6EFAB382BC408C400DBABA1 /* 4963_섬의개수.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "4963_섬의개수.swift"; sourceTree = "<group>"; };
 		A6F49C422BC7BB7E00829C7F /* 2468_안전영역.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2468_안전영역.swift"; sourceTree = "<group>"; };
+		A6F4B9DE2BCBD6EE009C91C4 /* 1325_효율적인해킹.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1325_효율적인해킹.swift"; sourceTree = "<group>"; };
 		A6FFDA192BBFDFFC0022A3E4 /* 2667_단지번호붙이기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2667_단지번호붙이기.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +73,7 @@
 				A6F49C422BC7BB7E00829C7F /* 2468_안전영역.swift */,
 				A69564902BC8014B00E669EC /* 11725_트리의부모찾기.swift */,
 				A6DF1E5A2BCAB62C00F86D5F /* 2644_촌수계산.swift */,
+				A6F4B9DE2BCBD6EE009C91C4 /* 1325_효율적인해킹.swift */,
 			);
 			path = DFS;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6D14B842BB6CF38005D91C9 /* main.swift in Sources */,
+				A6F4B9DF2BCBD6EE009C91C4 /* 1325_효율적인해킹.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +250,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -303,7 +307,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -317,6 +321,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -328,6 +333,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = HU8RMC793N;
 				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
