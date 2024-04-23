@@ -39,6 +39,9 @@
 		A69F67322BCE900E00DCA3A3 /* 2644_촌수계산.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2644_촌수계산.swift"; sourceTree = "<group>"; };
 		A69F67342BCE906500DCA3A3 /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
 		A6B19EDE2BCFFA5A0090A59F /* 2468_안전영역.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2468_안전영역.swift"; sourceTree = "<group>"; };
+		A6C2187B2BD7C3860015C6B3 /* 2720_세탁소사장동혁.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2720_세탁소사장동혁.swift"; sourceTree = "<group>"; };
+		A6C2187C2BD7CBD60015C6B3 /* 2810_컵홀더.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2810_컵홀더.swift"; sourceTree = "<group>"; };
+		A6C2187D2BD7D3F10015C6B3 /* 2839_설탕배달.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2839_설탕배달.swift"; sourceTree = "<group>"; };
 		A6D14B802BB6CF38005D91C9 /* Baekjoon_Roadmap */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Baekjoon_Roadmap; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D14B832BB6CF38005D91C9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		A6D14B8B2BB6CF60005D91C9 /* 2051_약수구하기.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2051_약수구하기.swift"; sourceTree = "<group>"; };
@@ -183,6 +186,9 @@
 				A6E5698E2BD677F80000760E /* 14470_전자레인지.swift */,
 				A6E5698F2BD679ED0000760E /* 5585_거스름돈.swift */,
 				A6E569902BD684930000760E /* 4796_캠핑.swift */,
+				A6C2187B2BD7C3860015C6B3 /* 2720_세탁소사장동혁.swift */,
+				A6C2187C2BD7CBD60015C6B3 /* 2810_컵홀더.swift */,
+				A6C2187D2BD7D3F10015C6B3 /* 2839_설탕배달.swift */,
 			);
 			path = Greedy;
 			sourceTree = "<group>";
