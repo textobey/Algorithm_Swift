@@ -13,7 +13,7 @@ import Foundation
 func solution() {
     let teamCount: Int = Int(readLine()!)!
     
-    var current: [Int] = [0, 0]
+    var current: Int = -1
     var result: Int = 0
     
     var durations: [[Int]] = []
@@ -38,25 +38,23 @@ func solution() {
     }
     
     durations.sort(by: {
-        if $0[1] != $1[1] {
-            return $0[1] < $1[1]
-        } else {
+        // 회의가 끝나는 시간이 같으면, 먼저 끝나는 회의가 앞으로 오도록
+        if $0[1] == $1[1] {
             return $0[0] < $1[0]
+        } else {
+            return $0[1] < $1[1]
         }
     })
     
-    //print(durations)
-    
+    // 처음에는 !(1시 ..< 4시.contains(otherStartTime)) && !(1 ..< 4시.contains(otherEndTime))
+    // 위의 조건으로 비교하려고 했는데, 2%에서 실패함..(반례를 찾아야 하는데 못찾음)
+    // -> 진행중인 회의 EndTime과 새로 시작하려는 회의의 StartTime이 크거나 같으면
+    // 현재 회의가 끝나는 시간(current)을 새로 교체
     for duration in durations {
-        if isValid(newTime: duration) {
-            current = duration
+        if duration[0] >= current {
+            current = duration[1]
             result += 1
         }
-    }
-    
-    func isValid(newTime: [Int]) -> Bool {
-        let currentDuration = (current[0] ..< current[1])
-        return currentDuration.contains(newTime[0]) != true && currentDuration.contains(newTime[1]) != true
     }
     
     print(result)
