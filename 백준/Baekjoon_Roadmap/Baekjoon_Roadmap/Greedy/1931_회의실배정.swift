@@ -8,7 +8,6 @@
 import Foundation
 
 // 1931 회의실배정
-// needFix
 
 func solution() {
     let teamCount: Int = Int(readLine()!)!
