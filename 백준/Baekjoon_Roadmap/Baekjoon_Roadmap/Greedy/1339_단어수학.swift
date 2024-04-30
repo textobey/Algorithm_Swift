@@ -8,13 +8,25 @@
 import Foundation
 
 // 1339_단어수학
-// needFix
+
 // 예제를 다 맞는데, 왜 바로 fail이 발생하는거지..?
+// Fix. 반례발견
+// 2
+// AB
+// BB
+//
+// 위와 같이 주어졌을때, 98 + 88이 되어버림 결과는 186
+// 근데 89 + 99로 만들어버리면 188로 더 높은수를 만들수있음
+// 어떤 알파벳에 더 높은 숫자를 부여해줄지 정해주는 과정이 필요함
+// 딕셔너리에 10^자릿수를 계속 누적해서 더하면
+// A는 10이 될거고, B는 12가(10^1 + 1^1 + 1^1) 될거임
+// [A: 10], [B: 12]
+// 위의 과정을 통해, 어떤 얼파벳에 더 높은 숫자를 부여해줄지 정할수있음
 
 func solution() {
     let n: Int = Int(readLine()!)!
     
-    var nums: [Int] = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    let nums: [Int] = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
     
     var words: [String] = []
     var maxLength: Int = 0
@@ -40,14 +52,28 @@ func solution() {
     var dict: [String: Int] = [:]
     
     for i in 0 ..< combined.count {
+        
+        let importantScore = Int(pow(10.0, Double(maxLength - i - 1)))
+        
         for j in 0 ..< combined[i].count {
-            if dict[combined[i][j]] != nil {
-                continue
-            }
-            dict.updateValue(nums.max()!, forKey: combined[i][j])
-            nums.removeFirst()
+            let letter = combined[i][j]
+            dict[letter, default: 0] += importantScore
+            //if dict[combined[i][j]] != nil {
+            //    continue
+            //}
+            //dict.updateValue(nums.max()!, forKey: combined[i][j])
+            //nums.removeFirst()
         }
     }
+    
+    dict.sorted { $0.value > $1.value }
+        .enumerated()
+        .forEach {
+            let key = $0.element.key
+            dict[key] = nums[$0.offset]
+        }
+    
+    //print(dict)
     
     var results: [Int] = []
     
