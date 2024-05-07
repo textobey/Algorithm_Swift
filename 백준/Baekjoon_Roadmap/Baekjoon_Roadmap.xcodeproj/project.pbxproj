@@ -34,6 +34,7 @@
 		A61DE0C62BCD11C90073C131 /* 1926_그림.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1926_그림.swift"; sourceTree = "<group>"; };
 		A61DE0C72BCD41C30073C131 /* 2210_숫자판점프.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2210_숫자판점프.swift"; sourceTree = "<group>"; };
 		A63F8E812BD9225C00AFC287 /* 1931_회의실배정.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1931_회의실배정.swift"; sourceTree = "<group>"; };
+		A6498DF82BEA448800321057 /* 2309_일곱난쟁이.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "2309_일곱난쟁이.swift"; sourceTree = "<group>"; };
 		A64F03602BD90606003F36A9 /* 11399_ATM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 11399_ATM.swift; sourceTree = "<group>"; };
 		A64F03612BD91360003F36A9 /* 11047_동전0.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "11047_동전0.swift"; sourceTree = "<group>"; };
 		A65365982BBFC5A400392BA7 /* 1012_유기농배추.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "1012_유기농배추.swift"; sourceTree = "<group>"; };
@@ -93,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6498DF72BEA40DD00321057 /* BruteForce */ = {
+			isa = PBXGroup;
+			children = (
+				A6498DF82BEA448800321057 /* 2309_일곱난쟁이.swift */,
+			);
+			path = BruteForce;
+			sourceTree = "<group>";
+		};
 		A6547EEC2BBD25A400CBE55B /* DFS */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,9 +177,10 @@
 			children = (
 				A6D14B832BB6CF38005D91C9 /* main.swift */,
 				A69F67332BCE904F00DCA3A3 /* Foundation */,
+				A6498DF72BEA40DD00321057 /* BruteForce */,
+				A6E5698D2BD677D10000760E /* Greedy */,
 				A6547EEC2BBD25A400CBE55B /* DFS */,
 				A69F67302BCE8FD900DCA3A3 /* BFS */,
-				A6E5698D2BD677D10000760E /* Greedy */,
 				A6D14B8A2BB6CF53005D91C9 /* part1 */,
 				A6547EED2BBD2EA700CBE55B /* part2 */,
 			);
