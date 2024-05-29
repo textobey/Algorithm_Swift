@@ -7,6 +7,11 @@
 
 import Foundation
 
+/*
+ Usage
+    Coordinate(x: 0, y: 1)
+ */
+
 struct Coordinate {
     let x: Int
     let y: Int
